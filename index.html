@@ -5,24 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Finalize Sua Compra</title>
 
-  <!-- ✅ PIXEL FACEBOOK -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2216596392095844'); 
-    fbq('track', 'PageView'); 
-    fbq('track', 'InitiateCheckout');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"/>
-  </noscript>
+  <!-- Pré-carregar banner -->
+  <link rel="preload" as="image" href="https://i.ibb.co/TDDzvR3T/Banner-para-novembro-azul-moderno-azul-e-branco-com-mensagem-20250628-233355-0000.png">
+
+  <!-- Notificação simulada -->
+  <script src="https://cdn.jsdelivr.net/npm/notiflix@2.6.0/dist/notiflix-aio-2.6.0.min.js"></script>
 
   <style>
     body {
@@ -115,6 +102,18 @@
       border-radius: 12px;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
+
+    .seguro {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .seguro p {
+      margin: 5px 0;
+    }
   </style>
 </head>
 <body>
@@ -128,7 +127,8 @@
   </div>
 
   <div class="banner">
-    <img src="https://i.ibb.co/TDDzvR3T/Banner-para-novembro-azul-moderno-azul-e-branco-com-mensagem-20250628-233355-0000.png" alt="Ebook Corpo Perfeito">
+    <img src="https://i.ibb.co/TDDzvR3T/Banner-para-novembro-azul-moderno-azul-e-branco-com-mensagem-20250628-233355-0000.png" alt="Ebook Corpo Perfeito" loading="eager">
+    </p>
   </div>
 
   <div class="checkout-container">
@@ -138,28 +138,19 @@
   </div>
 
   <div class="provas-sociais">
-    <h3><strong>Quem já comprou não se arrependeu! </strong></h3>
-    <img src="https://i.ibb.co/JjLC65nh/Screenshot-20250113-142833.jpg" alt="Depoimento 1">
-    <img src="https://i.ibb.co/3yYdn5p4/Screenshot-20250113-142008.jpg" alt="Depoimento 2">
-    <img src="https://i.ibb.co/XxQpN35B/Screenshot-20250628-220844.jpg" alt="Depoimento 3">
+    <h3><strong>Quem comprou recomenda! ❤️</strong></h3>
+    <img src="https://i.ibb.co/JjLC65nh/Screenshot-20250113-142833.jpg" alt="Depoimento 1" loading="lazy">
+    <img src="https://i.ibb.co/3yYdn5p4/Screenshot-20250113-142008.jpg" alt="Depoimento 2" loading="lazy">
+    <img src="https://i.ibb.co/XxQpN35B/Screenshot-20250628-220844.jpg" alt="Depoimento 3" loading="lazy">
   </div>
-<!-- SEÇÃO DE GARANTIA E SEGURANÇA -->
-  <div style="background-color: #fff; padding: 30px 20px; text-align: center; border-top: 1px solid #ddd;">
-    <h4 style="color: #111; margin-bottom: 15px;">🔒 Compra 100% Segura</h4>
-    <p style="color: #444; font-size: 0.95rem; max-width: 600px; margin: 0 auto 20px;">
-      Sua compra está protegida por criptografia SSL e nosso sistema de pagamento é seguro e confiável. Você receberá tudo por e-mail imediatamente após o pagamento.
-    </p>
 
-    <p style="color: #444; font-size: 0.95rem;">
-      ✅ Garantia de satisfação<br>
-      ✅ Termos e condições respeitados<br>
-      ✅ Suporte disponível para dúvidas e ajuda
-    </p>
-
-    <p style="color: #888; font-size: 0.85rem; margin-top: 30px;">
-      © 2025 Método Corpo Perfeito. Todos os direitos reservados. Este site não é afiliado ao Facebook™ ou Instagram™.
-    </p>
+  <div class="seguro">
+    <p>🔒 Compra 100% segura com dados criptografados</p>
+    <p>✅ Acesso imediato após o pagamento</p>
+    <p>📦 Suporte via WhatsApp para dúvidas</p>
+    <p>🚫 Garantimos sigilo total dos seus dados</p>
   </div>
+
   <script>
     let minutos = 15;
     let segundos = 0;
@@ -183,6 +174,61 @@
     }
 
     updateTimer();
+  </script>
+
+  <script>
+    var position = "left-bottom";
+    var color = "verde";
+    var animation = "from-left";
+    var product_name = "";
+    var phrase = "acabou de comprar";
+    var timeout = 4000;
+    var type_name = "masc, fem";
+    var msg_final = "";
+    var min_time = 4;
+    var max_time = 20;
+
+    var names_masc = ['Francisca','Joana','Antonia','Margarida','Carla','Paula','Bela','Isabel'];
+    var names_fem = ['Maria','Ana','Francisca','Antonia','Adriana','Juliana','Marcia','Fernanda','Patricia','Aline','Sandra','Camila','Amanda','Bruna','Jessica','Leticia','Julia','Luciana','Vanessa','Mariana','Gabriela','Vera','Claudia','Beatriz','Rita','Luana','Sonia','Renata','Eliane'];
+
+    var option = {
+      position: position,
+      cssAnimationStyle: animation,
+      plainText: false,
+      timeout: timeout
+    };
+
+    function show_notification() {
+      if (type_name == "masc") {
+        msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
+      } else if (type_name == "fem") {
+        msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
+      } else {
+        var array_aux = ["masc", "fem"];
+        if (array_aux[Math.floor(Math.random() * array_aux.length)] == "masc") {
+          msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
+        } else {
+          msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
+        }
+      }
+
+      msg_final += decodeURIComponent(escape(" " + phrase + " " + product_name));
+
+      if (color == "verde") {
+        Notiflix.Notify.Success(msg_final, option);
+      } else if (color == "azul") {
+        Notiflix.Notify.Info(msg_final, option);
+      } else if (color == "vermelho") {
+        Notiflix.Notify.Failure(msg_final, option);
+      } else if (color == "amarelo") {
+        Notiflix.Notify.Warning(msg_final, option);
+      }
+
+      var rand = Math.floor(Math.random() * (max_time - min_time + 1) + min_time);
+      setTimeout(show_notification, rand * 1000);
+    }
+
+    setTimeout(show_notification, 4 * 1000);
   </script>
 
 </body>
