@@ -5,11 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Finalize Sua Compra</title>
 
-  <!-- Pré-carregar banner -->
-  <link rel="preload" as="image" href="https://i.ibb.co/TDDzvR3T/Banner-para-novembro-azul-moderno-azul-e-branco-com-mensagem-20250628-233355-0000.png">
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
 
-  <!-- Notificação simulada -->
-  <script src="https://cdn.jsdelivr.net/npm/notiflix@2.6.0/dist/notiflix-aio-2.6.0.min.js"></script>
+    fbq('init', '2216596392095844');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"/>
+  </noscript>
 
   <style>
     body {
@@ -62,12 +75,7 @@
       width: 90%;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .banner p {
-      font-size: 1rem;
-      color: #444;
-      margin-top: 10px;
+      loading: lazy;
     }
 
     .checkout-container {
@@ -101,18 +109,15 @@
       margin: 10px;
       border-radius: 12px;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      loading: lazy;
     }
 
-    .seguro {
-      background-color: #eee;
+    .seguranca {
+      background: #eee;
       text-align: center;
-      padding: 20px;
+      padding: 25px 20px;
       font-size: 0.95rem;
-      color: #333;
-    }
-
-    .seguro p {
-      margin: 5px 0;
+      color: #555;
     }
   </style>
 </head>
@@ -127,34 +132,30 @@
   </div>
 
   <div class="banner">
-    <img src="https://i.ibb.co/TDDzvR3T/Banner-para-novembro-azul-moderno-azul-e-branco-com-mensagem-20250628-233355-0000.png" alt="Ebook Corpo Perfeito" loading="eager">
-    </p>
+    <img src="https://i.ibb.co/TDDzvR3T/Banner-para-novembro-azul-moderno-azul-e-branco-com-mensagem-20250628-233355-0000.png" alt="Ebook Corpo Perfeito">
   </div>
 
   <div class="checkout-container">
     <div class="checkout">
-      <iframe src="https://pay.kuenha.com/8d314c10-4685-48b6-9ee6-deb49c97f02a" width="100%" height="600" frameborder="0" style="border-radius: 10px;"></iframe>
+      <iframe id="kuenhaCheckout" src="https://pay.kuenha.com/8d314c10-4685-48b6-9ee6-deb49c97f02a" width="100%" height="600" frameborder="0" style="border-radius: 10px;"></iframe>
     </div>
   </div>
 
   <div class="provas-sociais">
-    <h3><strong>Quem comprou recomenda! ❤️</strong></h3>
-    <img src="https://i.ibb.co/JjLC65nh/Screenshot-20250113-142833.jpg" alt="Depoimento 1" loading="lazy">
-    <img src="https://i.ibb.co/3yYdn5p4/Screenshot-20250113-142008.jpg" alt="Depoimento 2" loading="lazy">
-    <img src="https://i.ibb.co/XxQpN35B/Screenshot-20250628-220844.jpg" alt="Depoimento 3" loading="lazy">
+    <h3><strong>Quem comprou recomendou! ️</strong></h3>
+    <img src="https://i.ibb.co/JjLC65nh/Screenshot-20250113-142833.jpg" alt="Depoimento 1">
+    <img src="https://i.ibb.co/3yYdn5p4/Screenshot-20250113-142008.jpg" alt="Depoimento 2">
+    <img src="https://i.ibb.co/XxQpN35B/Screenshot-20250628-220844.jpg" alt="Depoimento 3">
   </div>
 
-  <div class="seguro">
-    <p>🔒 Compra 100% segura com dados criptografados</p>
-    <p>✅ Acesso imediato após o pagamento</p>
-    <p>📦 Suporte via WhatsApp para dúvidas</p>
-    <p>🚫 Garantimos sigilo total dos seus dados</p>
+  <div class="seguranca">
+    🔒 Compra 100% segura • Dados protegidos com criptografia SSL • Suporte por WhatsApp após a compra
   </div>
 
+  <!-- Contador -->
   <script>
     let minutos = 15;
     let segundos = 0;
-
     const minEl = document.getElementById("minutos");
     const segEl = document.getElementById("segundos");
 
@@ -176,6 +177,15 @@
     updateTimer();
   </script>
 
+  <!-- Evento Pixel de Checkout iniciado -->
+  <script>
+    document.getElementById('kuenhaCheckout').addEventListener('load', function () {
+      fbq('track', 'InitiateCheckout');
+    });
+  </script>
+
+  <!-- Notificação Simulada -->
+  <script src="https://cdn.jsdelivr.net/npm/notiflix@2.6.0/dist/notiflix-aio-2.6.0.min.js"></script>
   <script>
     var position = "left-bottom";
     var color = "verde";
@@ -188,8 +198,8 @@
     var min_time = 4;
     var max_time = 20;
 
-    var names_masc = ['Francisca','Joana','Antonia','Margarida','Carla','Paula','Bela','Isabel'];
-    var names_fem = ['Maria','Ana','Francisca','Antonia','Adriana','Juliana','Marcia','Fernanda','Patricia','Aline','Sandra','Camila','Amanda','Bruna','Jessica','Leticia','Julia','Luciana','Vanessa','Mariana','Gabriela','Vera','Claudia','Beatriz','Rita','Luana','Sonia','Renata','Eliane'];
+    var names_masc = ['Manuela', 'Joana', 'Esoerança', 'Jessica', 'Carla'];
+    var names_fem = ['Maria', 'Ana', 'Francisca', 'Juliana', 'Camila'];
 
     var option = {
       position: position,
