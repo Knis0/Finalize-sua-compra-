@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finalize Sua Compra</title>
+
+  <!-- ✅ PIXEL FACEBOOK -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2216596392095844'); 
+    fbq('track', 'PageView'); 
+    fbq('track', 'InitiateCheckout');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=2216596392095844&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+    }
+
+    .urgencia {
+      background-color: #ff0000;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .contador {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quadrado {
+      background-color: #fff;
+      color: #ff0000;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .quadrado .min,
+    .quadrado .seg {
+      font-size: 0.7rem;
+      margin-left: 3px;
+    }
+
+    .banner {
+      text-align: center;
+      margin: 30px 20px;
+    }
+
+    .banner img {
+      max-width: 300px;
+      width: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .banner p {
+      font-size: 1rem;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    .checkout-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .checkout {
+      width: 90%;
+      max-width: 450px;
+      text-align: center;
+      position: sticky;
+      top: 20px;
+      z-index: 999;
+    }
+
+    .provas-sociais {
+      background-color: #f9f9f9;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .provas-sociais h3 {
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .provas-sociais img {
+      max-width: 250px;
+      margin: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="urgencia">
+    ESSA OFERTA TERMINA EM:
+    <div class="contador">
+      <div class="quadrado" id="minutos">15<span class="min">min</span></div>:
+      <div class="quadrado" id="segundos">00<span class="seg">s</span></div>
+    </div>
+  </div>
+
+  <div class="banner">
+    <img src="https://i.ibb.co/TDDzvR3T/Banner-para-novembro-azul-moderno-azul-e-branco-com-mensagem-20250628-233355-0000.png" alt="Ebook Corpo Perfeito">
+  </div>
+
+  <div class="checkout-container">
+    <div class="checkout">
+      <iframe src="https://pay.kuenha.com/8d314c10-4685-48b6-9ee6-deb49c97f02a" width="100%" height="600" frameborder="0" style="border-radius: 10px;"></iframe>
+    </div>
+  </div>
+
+  <div class="provas-sociais">
+    <h3><strong>Quem já comprou não se arrependeu! </strong></h3>
+    <img src="https://i.ibb.co/JjLC65nh/Screenshot-20250113-142833.jpg" alt="Depoimento 1">
+    <img src="https://i.ibb.co/3yYdn5p4/Screenshot-20250113-142008.jpg" alt="Depoimento 2">
+    <img src="https://i.ibb.co/XxQpN35B/Screenshot-20250628-220844.jpg" alt="Depoimento 3">
+  </div>
+<!-- SEÇÃO DE GARANTIA E SEGURANÇA -->
+  <div style="background-color: #fff; padding: 30px 20px; text-align: center; border-top: 1px solid #ddd;">
+    <h4 style="color: #111; margin-bottom: 15px;">🔒 Compra 100% Segura</h4>
+    <p style="color: #444; font-size: 0.95rem; max-width: 600px; margin: 0 auto 20px;">
+      Sua compra está protegida por criptografia SSL e nosso sistema de pagamento é seguro e confiável. Você receberá tudo por e-mail imediatamente após o pagamento.
+    </p>
+
+    <p style="color: #444; font-size: 0.95rem;">
+      ✅ Garantia de satisfação<br>
+      ✅ Termos e condições respeitados<br>
+      ✅ Suporte disponível para dúvidas e ajuda
+    </p>
+
+    <p style="color: #888; font-size: 0.85rem; margin-top: 30px;">
+      © 2025 Método Corpo Perfeito. Todos os direitos reservados. Este site não é afiliado ao Facebook™ ou Instagram™.
+    </p>
+  </div>
+  <script>
+    let minutos = 15;
+    let segundos = 0;
+
+    const minEl = document.getElementById("minutos");
+    const segEl = document.getElementById("segundos");
+
+    function updateTimer() {
+      if (segundos === 0) {
+        if (minutos === 0) return;
+        minutos--;
+        segundos = 59;
+      } else {
+        segundos--;
+      }
+
+      minEl.innerHTML = `${String(minutos).padStart(2, '0')}<span class="min">min</span>`;
+      segEl.innerHTML = `${String(segundos).padStart(2, '0')}<span class="seg">s</span>`;
+
+      setTimeout(updateTimer, 1000);
+    }
+
+    updateTimer();
+  </script>
+
+</body>
+</html>
