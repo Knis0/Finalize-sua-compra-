@@ -70,28 +70,33 @@
       margin: 30px 20px;
     }
 
-    .banner img {
-      max-width: 300px;
-      width: 90%;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      loading: lazy;
+    .banner {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.banner img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
+  display: block;
+}
+      
     }
 
-    .checkout-container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
+   .checkout-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
 
-    .checkout {
-      width: 90%;
-      max-width: 450px;
-      text-align: center;
-      position: sticky;
-      top: 20px;
-      z-index: 999;
-    }
+.checkout {
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
 
     .provas-sociais {
       background-color: #f9f9f9;
@@ -132,7 +137,10 @@
   </div>
 
   <div class="banner">
-    <img src="https://i.ibb.co/TDDzvR3T/Banner-para-novembro-azul-moderno-azul-e-branco-com-mensagem-20250628-233355-0000.png" alt="Ebook Corpo Perfeito">
+   <img 
+  src="https://i.ibb.co/TDDzvR3T/Banner-para-novembro-azul-moderno-azul-e-branco-com-mensagem-20250628-233355-0000.png" 
+  alt="Ebook Corpo Perfeito"
+/>
   </div>
 
   <div class="checkout-container">
@@ -142,7 +150,7 @@
   </div>
 
   <div class="provas-sociais">
-    <h3><strong>Quem comprou recomendou! ️</strong></h3>
+    <h3><strong>Quem já comprou recomenda ❤️</strong></h3>
     <img src="https://i.ibb.co/JjLC65nh/Screenshot-20250113-142833.jpg" alt="Depoimento 1">
     <img src="https://i.ibb.co/3yYdn5p4/Screenshot-20250113-142008.jpg" alt="Depoimento 2">
     <img src="https://i.ibb.co/XxQpN35B/Screenshot-20250628-220844.jpg" alt="Depoimento 3">
@@ -198,8 +206,8 @@
     var min_time = 4;
     var max_time = 20;
 
-    var names_masc = ['Manuela', 'Joana', 'Esoerança', 'Jessica', 'Carla'];
-    var names_fem = ['Maria', 'Ana', 'Francisca', 'Juliana', 'Camila'];
+    var names_masc = ['Maria', 'Ana', 'Luísa', 'Teresa', 'Joana', 'Carla', 'Rosa', 'Helena', 'Sofia', 'Isabel', 'Cátia', 'Filomena', 'Daniela', 'Lourdes', 'Inês', 'Sandra', 'Patricia', 'Andreia', 'Margarida', 'Laura', 'Paula', 'Graça', 'Júlia', 'Elisabete', 'Fátima'];
+    var names_fem = ['Francisca', 'Vitória', 'Domingas', 'Neusa', 'Zuleica', 'Vânia', 'Judite', 'Clarisse', 'Eulália', 'Nilza', 'Nazaré', 'Linda', 'Olinda', 'Madalena', 'Marcelina', 'Eunice', 'Benedita', 'Dulce', 'Albertina', 'Leonor', 'Cecilia'];
 
     var option = {
       position: position,
@@ -242,4 +250,4 @@
   </script>
 
 </body>
-</html>
+  </html>
